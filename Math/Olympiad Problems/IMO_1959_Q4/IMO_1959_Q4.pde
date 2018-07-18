@@ -37,12 +37,14 @@ void draw(){
     if(C.isMouseDragging()) B.y=C.y;
 
     //Label
-    textSize(100);
+    textSize(80);
     fill(255);
     text("A: " + (abs(B.x-C.y)/100),8*width/9,height/20);
     text("B: " + (abs(A.y-C.y)/100),8*width/9,2*height/20);
     text("C: " + round(dist(B.x,B.y,A.x,A.y)*10)/1000.0,8*width/9,3*height/20);
-    text("Angle B: " + atan(abs(A.y-C.y)/abs(B.x-C.y)),8*width/9,4*height/20);
+
+    text("Median: " + dist(C.x,C.y,(A.x+B.x)/2,(A.y+B.y)/2)/100,8*width/9,4*height/20);
+    //text("Angle B: " + atan(abs(A.y-C.y)/abs(B.x-C.y)),8*width/9,4*height/20);
 
 }
 
