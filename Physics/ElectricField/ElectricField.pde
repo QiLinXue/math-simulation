@@ -24,7 +24,7 @@ void draw(){
     particleList[movingParticleNumber].x = mouseX;
     particleList[movingParticleNumber].y = mouseY;
 
-    //displayArrow();
+    displayArrow();
 
 }
 
