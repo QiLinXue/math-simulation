@@ -6,22 +6,39 @@ void settings(){
     fullScreen();
 }
 
-int mode = -1; //1 = compass, -1 = ruler
+int compassMode = -1; //1 = compass, -1 = ruler
 
 void draw(){
     background(20);
-    displayEverything();
-    if(mode == 1) compassDisplay();
-    if(mode == -1) rulerDisplay();
+    cDraw();
 }
 
 void keyPressed(){
-    if(key == ' ') mode *= -1;
+    cKey();
 }
 
 void mousePressed(){
-    if(mode == 1) switchCompassMode();
-    if(mode == -1) switchRulerMode();
+    cMouse();
+}
+
+boolean cActivated = true;
+void cDraw(){
+    if(cActivated){
+        displayEverything();
+        if(compassMode == 1) compassDisplay();
+        if(compassMode == -1) rulerDisplay();
+    }
+}
+
+void cKey(){
+    if(key == ' ' && cActivated) compassMode *= -1;
+}
+
+void cMouse(){
+    if(cActivated){
+        if(compassMode == 1) switchCompassMode();
+        if(compassMode == -1) switchRulerMode();
+    }
 }
 
 float[][] compass = {};
@@ -67,17 +84,17 @@ void switchCompassMode(){
 }
 
 void switchRulerMode(){
-    if(rulerMode == -1){
+    if(rulercompassMode == -1){
         float[] array = {currentCo[0],currentCo[1],mouseX,mouseY};
         ruler = (float[][])append(ruler,array);
     }
-    rulerMode *= -1;
+    rulercompassMode *= -1;
 }
 
-int rulerMode = 1;
+int rulercompassMode = 1;
 float[][] ruler = {};
 void rulerDisplay(){
-    if(rulerMode == 1){
+    if(rulercompassMode == 1){
         fill(255);
         currentCo[0] = mouseX;
         currentCo[1] = mouseY;
@@ -85,7 +102,7 @@ void rulerDisplay(){
         fill(0);
         ellipse(mouseX,mouseY,10,10);
     }
-    if(rulerMode == -1){
+    if(rulercompassMode == -1){
         stroke(255);
         strokeWeight(10);
         line(currentCo[0],currentCo[1],mouseX,mouseY);
