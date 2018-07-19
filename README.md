@@ -7,7 +7,7 @@ A series of (poorly and rushed) code written to demonstrate mathematical concept
 ## Mathematics
 
 | Type          | Name                                                      | Website  |
-| ------------- |:-------------------------------------------------------:  | --------:|
+| :-----------: |:-------------------------------------------------------:  | :-------:|
 | Tool          | [Compass and Ruler](/Math/Compass)                        |   N/A    |
 | Concept       | [Power of a Point](/Math/Radical%20Axis/Power_of_a_Point) |   N/A    |
 | Concept       | [Radical Axis](/Math/Radical%20Axis/Radical_Axis)         |   N/A    |
@@ -17,6 +17,6 @@ A series of (poorly and rushed) code written to demonstrate mathematical concept
 
 ## Physics
 | Type          | Name                                                      | Website  |
-| ------------- |:-------------------------------------------------------:  | --------:|
+| :-----------: |:-------------------------------------------------------:  | :-------:|
 | Concept       | [Electric Fields](/Physics/ElectricField)                 |   N/A    |
 | Concept       | [Solar System](/Physics/SolarSystem)                      |   N/A    |
