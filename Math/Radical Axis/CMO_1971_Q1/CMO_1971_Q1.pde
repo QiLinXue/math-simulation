@@ -18,7 +18,7 @@ void setup(){
     E = new Point("E",2*width,2*height,50,true,true);
     P = new Point("P",2*width,2*height,50,true,true);
 
-    Info = new ContestInfo("1971 Canadian Math Olympiad - Problem #1","DEB is a chord of a circle such that DE=3 and EB=5. Let O be the center of the circle. Join OE and extend OE to cut the circle at C. Given EC=1, find the radius of the circle.");
+    Info = new ContestInfo("1971 Canadian Math Olympiad - Problem #1","Let O be the center of the circle. BD is a chord of a circle such that the intersection between OC is called E. Given DE=3, EB=5 and EC=1, find the radius of the circle.");
 
     De = new Text("3",2*width,2*height,40);
     Eb = new Text("5",2*width,2*height,40);
@@ -50,7 +50,7 @@ void draw(){
 
     if(counter == 2) line(B.x,B.y,mouseX,mouseY);
     if(counter >= 3) line(D.x,D.y,B.x,B.y);
-    if(counter > 4) line(O.x,O.y,newx,newy);
+    if(counter > 7) line(O.x,O.y,newx,newy);
 
     O.renderAndMove();
     E.renderAndMove();
@@ -88,24 +88,24 @@ void keyPressed(){
             E.y = mouseY;
         }
         if(counter == 4){
+            De.x = mouseX;
+            De.y = mouseY;
+        }
+        if(counter == 5){
+            Eb.x = mouseX;
+            Eb.y = mouseY;
+        }
+        if(counter == 6){
+            Ec.x = mouseX;
+            Ec.y = mouseY;
+        }
+        if(counter == 7){
             newx = O.x-(C.x-O.x);
             newy = O.y-(C.y-O.y);
 
             line(O.x,O.y,newx,newy);
             P.x = newx;
             P.y = newy;
-        }
-        if(counter == 5){
-            De.x = mouseX;
-            De.y = mouseY;
-        }
-        if(counter == 6){
-            Eb.x = mouseX;
-            Eb.y = mouseY;
-        }
-        if(counter == 7){
-            Ec.x = mouseX;
-            Ec.y = mouseY;
         }
         if(counter == 8){
             Radius.x = mouseX;
@@ -132,4 +132,5 @@ void keyPressed(){
     else if(keyCode == ENTER){
         saveFrame("screenshot####.png");
     }
+    else if(key == 'r') counter = 0;
 }
